@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+    <div class="user-data">
+        {% if user.is_authenticated %}
+        First name:{{user.first_name}}<br>
+        last  name:{{user.last_name}}<br>
+        user name:{{user.username}}<br>
+        email: {{user.email}}<br>
+        {% endif %}
+    </div> 
+</body>
+</html>

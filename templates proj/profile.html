@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body{
+            background-color: gray;
+        }
+        .main {
+        border: 1px solid hsl(0, 0%, 80%);
+        background-color:transparent;
+        width: 500px;
+        height: 520px;
+        margin: 7em auto;
+        border-radius: 1.5em;
+        box-shadow: 10px 11px 0px 0px rgba(0, 0, 0, 0.14);
+        position : relative;
+    }
+    
+    .un {
+    width: 70%;
+    color: rgb(41, 56, 38);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: whitesmoke;
+    padding: 30px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 1px solid #E1BEE7;
+    margin-left: 15%;
+    text-align: center;
+    margin-bottom: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+
+   
+    
+    .profile {
+        padding-top: 30px;
+        color: whitesmoke;
+        font-family:'Times New Roman', Times, serif;
+        font-weight: bold;
+        font-size: 50px;
+    }
+
+    .user{
+        padding-top: 0px;
+        color: black;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: bold;
+        font-size: 23px;border-color: #8C55AA;
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="main">
+        <p class="profile" align="center">Profile</p>
+           <div class="user">
+            {% if user.is_authenticated %}
+            <div class="form1">
+                {% csrf_token %}
+                <div class="un ">{{user.username}}</div>
+                <div class="un ">{{user.email}}</div>
+                <div class="un ">{{user.first_name}}</div>
+                <div class="un ">{{user.last_name}}</div>
+                {% endif %}
+            </div>
+            </div>
+        </div>
+              
+        
+          
+</body>
+</html>
